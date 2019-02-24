@@ -1,6 +1,6 @@
 # Typescript Cheatsheet
 
-#### This repository is by no means a recommended way of doing this in Typescript, it is merely a place where I keep track of typescript tricks as I learn them
+#### This repository is by no means a recommended way of doing things in Typescript, it is merely a place where I keep track of typescript tricks as I learn them
 
 ### Merging and Extending
 
