@@ -1,17 +1,15 @@
-import { Request } from 'apollo-server-env';
+import express = require('express');
 
 type MutationBody = { id: string };
+// MutationRequestBody is {...express.Request['body'], id:string}
+type MutationRequestBody = express.Request['body'] & MutationBody;
 
-type MutationRequestBody = Partial<express.Request['body']> & MutationBody;
-
+// Request is {...express.Request, cookies, session}
 export default interface Request extends express.Request {
-  log: Bunyan;
   cookies: { [key: string]: string };
-  user?: EntUser;
-  adminUser?: EntUser;
   session: any;
-  web3: Web3;
 }
+// Request is {...Request, body: {...express.Request['body'], id:string}}
 export interface Mutation extends Request {
   body: MutationRequestBody;
 }
