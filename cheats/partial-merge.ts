@@ -2,7 +2,7 @@ import express = require('express');
 
 type MutationBody = { id: string };
 // MutationRequestBody is {...express.Request['body'], id:string}
-type MutationRequestBody = express.Request['body'] & MutationBody;
+type MutationRequestBody = Partial<express.Request['body']> & MutationBody;
 
 // Request is {...express.Request, cookies, session}
 export default interface Request extends express.Request {
